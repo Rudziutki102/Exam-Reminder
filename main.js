@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 let btn = document.querySelector("button");
 // console.log(btn);
 let inputQuestion = document.querySelector(".form__input--question");
@@ -18,11 +17,9 @@ btn.addEventListener("click", e => {
     question
   };
   //   console.log(questionElement);
-  //   questionArr.push(questionElement);
+  questionArr.push(questionElement);
   inputQuestion.value = "";
   inputAnswer.value = "";
 });
-// zrobić listę samych pytań które zostały już wpisane
-=======
+// zrobić listę samych pytań które zostały już wpisan
 console.log("dziala");
->>>>>>> a8c678ed17364bfd8b8b99602b0f27c30bcbe0cd

@@ -1,9 +1,11 @@
 let btn = document.querySelector(".button--send");
-// console.log(btn);
+// let btnShowMore = document.createElement("button.button--showMore");
+const btnRandom = document.querySelector(".button--random");
+const ul = document.querySelector("ul");
 let inputQuestion = document.querySelector(".form__input--question");
 let inputAnswer = document.querySelector(".form__input--answer");
 let questionArr = [];
-let itemList = document.createElement("li");
+let itemList = document.createElement("div");
 let flag;
 
 const checkQuestion = function(a, b) {
@@ -21,8 +23,6 @@ btn.addEventListener("click", e => {
   if (question.toLowerCase() === "") return alert("wypełnij pole z pytaniem");
   else if (answer.toLowerCase() === "")
     return alert("Wypełnij pole odpowiedzi");
-  // if (question.toLowerCase() == questionElement.question)
-  //   return alert("zapisałes już to pytanie");
   let questionElement = {
     answer,
     question
@@ -42,3 +42,13 @@ btn.addEventListener("click", e => {
 // zrobić listę samych pytań które zostały już wpisan
 // console.log("dziala");
 //halko
+btnRandom.addEventListener("click", () => {
+  let questionNumber = Math.floor(Math.random() * questionArr.length);
+  // console.log(questionNumber)
+  itemList.innerHTML = `<p>${questionArr[questionNumber].question}</p>`;
+  console.log(itemList);
+  ul.appendChild(itemList);
+  btnShowMore.classList.add("button--showMore");
+  btnShowMore.textContent = "Rozwiń pytanie";
+  itemList.appendChild(btnShowMore);
+});

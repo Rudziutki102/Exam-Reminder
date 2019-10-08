@@ -48,6 +48,7 @@ btnRandom.addEventListener("click", () => {
   itemList.innerHTML = `<p>${questionArr[questionNumber].question}</p>`;
   console.log(itemList);
   ul.appendChild(itemList);
+  let btnShowMore = document.createElement("button");
   btnShowMore.classList.add("button--showMore");
   btnShowMore.textContent = "Rozwiń pytanie";
   itemList.appendChild(btnShowMore);

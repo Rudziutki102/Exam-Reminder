@@ -5,8 +5,9 @@ const ul = document.querySelector("ul");
 let inputQuestion = document.querySelector(".form__input--question");
 let inputAnswer = document.querySelector(".form__input--answer");
 let questionArr = [];
-let itemList = document.createElement("div");
+let itemList = document.createElement("li");
 let flag;
+let btnShowMore = document.createElement("BUTTON");
 
 const checkQuestion = function(a, b) {
   questionArr.forEach(a => {
@@ -45,10 +46,9 @@ btn.addEventListener("click", e => {
 btnRandom.addEventListener("click", () => {
   let questionNumber = Math.floor(Math.random() * questionArr.length);
   // console.log(questionNumber)
-  itemList.innerHTML = `<p>${questionArr[questionNumber].question}</p>`;
+  itemList.textContent = `${questionArr[questionNumber].question}`;
   console.log(itemList);
   ul.appendChild(itemList);
-  let btnShowMore = document.createElement("button");
   btnShowMore.classList.add("button--showMore");
   btnShowMore.textContent = "Rozwiń pytanie";
   itemList.appendChild(btnShowMore);
